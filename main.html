@@ -23,11 +23,6 @@
             margin: 0;
             font-size: 24px;
         }
-        .logout {
-            cursor: pointer;
-            color: #007BFF;
-            font-size: 16px;
-        }
         .container {
             padding: 20px;
         }
@@ -36,7 +31,6 @@
 <body>
     <div class="header">
         <h1>Pete's Database</h1>
-        <div class="logout" onclick="logout()">Logout</div>
     </div>
     <div class="container">
         <!-- Main content goes here -->
@@ -44,8 +38,6 @@
     <script>
         function logout() {
             window.close(); // Attempt to close the window
-            // Redirect to the OHL website as a fallback if the window can't be closed
-            window.location.href = "https://ontariohockeyleague.com/";
         }
     </script>
 </body>
