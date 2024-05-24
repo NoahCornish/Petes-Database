@@ -23,6 +23,11 @@
             margin: 0;
             font-size: 24px;
         }
+        .logout {
+            cursor: pointer;
+            color: #007BFF;
+            font-size: 16px;
+        }
         .container {
             padding: 20px;
         }
@@ -31,13 +36,16 @@
 <body>
     <div class="header">
         <h1>Pete's Database</h1>
+        <div class="logout" onclick="logout()">Logout</div>
     </div>
     <div class="container">
         <!-- Main content goes here -->
     </div>
     <script>
         function logout() {
-            window.close(); // Attempt to close the window
+            window.close(); // Attempt to close window
+            // Redirect as a fallback if the window can't be closed
+            window.location.href = "index.html";
         }
     </script>
 </body>

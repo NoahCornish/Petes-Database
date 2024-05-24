@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Pete's Database</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
         }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            margin-top: 20px;
+        .header {
+            background-color: #ffffff;
             padding: 10px 20px;
-            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .logout {
             cursor: pointer;
+            color: #007BFF;
+            font-size: 16px;
+        }
+        .container {
+            padding: 20px;
         }
     </style>
-    <script>
-        function promptLogin() {
-            const username = prompt("Enter your username:");
-            const password = prompt("Enter your password:");
-            if (username === "Noah" && password === "Cornish") {
-                window.location.href = "main.html"; // Redirect to main.html
-            } else {
-                alert("Access denied");
-            }
-        }
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome</h1>
-        <button class="button" onclick="promptLogin()">Login</button>
+    <div class="header">
+        <h1>Pete's Database</h1>
+        <div class="logout" onclick="logout()">Logout</div>
     </div>
+    <div class="container">
+        <!-- Main content goes here -->
+    </div>
+    <script>
+        function logout() {
+            window.close(); // Attempt to close the window
+            // Redirect to the OHL website as a fallback if the window can't be closed
+            window.location.href = "https://ontariohockeyleague.com/";
+        }
+    </script>
 </body>
 </html>
