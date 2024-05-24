@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header .logout {
+            font-size: 16px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+        .container {
+            padding: 20px;
+        }
+        .breadcrumb {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Pete's Database</h1>
+        <div class="logout" onclick="logout()">Logout</div>
+    </div>
+    <div class="container">
+        <h2>Prospects Page Content</h2>
+        <p>This is the Prospects page.</p>
+        <div class="breadcrumb">
+            <label for="pageSelect">Navigate to:</label>
+            <select id="pageSelect" onchange="navigateToPage()">
+                <option value="" disabled selected>Select a page</option>
+                <option value="ohl_stats.html">OHL Stats</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        function navigateToPage() {
+            const select = document.getElementById('pageSelect');
+            const selectedPage = select.value;
+            if (selectedPage) {
+                window.location.href = selectedPage;
+            }
+        }
+
+        function logout() {
+            window.close(); // Attempt to close the window
+        }
+    </script>
+</body>
+</html>
