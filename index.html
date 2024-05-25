@@ -20,7 +20,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #FFFFFF;
         }
         .button {
             margin-top: 20px;
@@ -37,7 +36,7 @@
         function promptLogin() {
             const username = prompt("Enter your username:");
             const password = prompt("Enter your password:");
-            if (username === "Noah" && password === "Cornish") {
+            if ((username === "Noah" || username === "Clair") && password === "Cornish") {
                 window.location.href = "main.html";
             } else {
                 alert("Access denied. Please contact administration for login assistance.");
