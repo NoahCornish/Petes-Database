@@ -2,6 +2,8 @@
 
 Welcome to the Peterborough Petes OHL and Prospect Data website repository! This project is dedicated to providing a comprehensive online platform for hosting significant Ontario Hockey League (OHL) and prospect data for the Peterborough Petes.
 
+**https://noahcornish.github.io/Petes-Database/**
+
 ## Table of Contents
 
 - [Introduction](#introduction)
