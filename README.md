@@ -27,3 +27,6 @@ The Peterborough Petes OHL and Prospect Data website is designed to offer team s
 
 ## Issues
 - **Devices:** Currently, the website is designed for computers only.
+
+
+**More information in this README.md file is coming soon**
