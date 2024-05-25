@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023-2024 Regular Season Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        .container {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .dropdown {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>2023-2024 Regular Season Stats</h1>
+        <div>
+            <button onclick="window.location.href='main.html'">Back to Main</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="teamSelect">Select Team: </label>
+            <select id="teamSelect" onchange="filterByTeam()">
+                <option value="">All Teams</option>
+                <!-- Teams will be populated here -->
+            </select>
+        </div>
+        <table id="statsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>BD</th>
+                    <th>Pos</th>
+                    <th>Team</th>
+                    <th>GP</th>
+                    <th>G</th>
+                    <th>A</th>
+                    <th>PTS</th>
+                    <th>Pts/G</th>
+                    <th>+/-</th>
+                    <th>PPG</th>
+                    <th>PPA</th>
+                    <th>GWG</th>
+                    <th>ENG</th>
+                    <th>PIM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="ohl_stats.js"></script>
+    <script>
+        function logout() {
+            window.location.href = 'index.html'; // Redirect to the welcome page
+        }
+    </script>
+</body>
+</html>
