@@ -4,10 +4,6 @@ async function fetchCSV() {
         const data = await response.text();
         const parsedData = Papa.parse(data, { header: true }).data;
 
-        // Debug: Log the fetched and parsed data
-        console.log('Fetched Data:', data);
-        console.log('Parsed Data:', parsedData);
-
         if (parsedData.length === 0) {
             console.error('Parsed data is empty');
             return;
@@ -29,9 +25,16 @@ async function fetchCSV() {
     }
 }
 
-function displayData(data) {
+function displayData(data, showTeamColumn = true) {
     const tableBody = document.querySelector('#statsTable tbody');
+    const teamHeader = document.querySelector('#teamHeader');
     tableBody.innerHTML = '';
+
+    if (showTeamColumn) {
+        teamHeader.style.display = '';
+    } else {
+        teamHeader.style.display = 'none';
+    }
 
     data.forEach(player => {
         const row = document.createElement('tr');
@@ -39,7 +42,7 @@ function displayData(data) {
             <td>${player.Name}</td>
             <td>${player.BD}</td>
             <td>${player.Pos}</td>
-            <td>${player.Team}</td>
+            <td class="teamColumn" style="${showTeamColumn ? '' : 'display:none;'}">${player.Team}</td>
             <td>${player.GP}</td>
             <td>${player.G}</td>
             <td>${player.A}</td>
@@ -54,9 +57,6 @@ function displayData(data) {
         `;
         tableBody.appendChild(row);
     });
-
-    // Debug: Log the table body content
-    console.log('Table Body HTML:', tableBody.innerHTML);
 }
 
 function filterByTeam() {
@@ -65,7 +65,7 @@ function filterByTeam() {
     const rawData = JSON.parse(teamSelect.dataset.rawData);
 
     const filteredData = selectedTeam ? rawData.filter(player => player.Team === selectedTeam) : rawData;
-    displayData(filteredData);
+    displayData(filteredData, selectedTeam === '');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
