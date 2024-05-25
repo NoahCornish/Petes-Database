@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #000000;
         }
         .container {
             text-align: center;
@@ -20,12 +20,17 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #FFFFFF;
         }
         .button {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 20px;
         }
     </style>
     <script>
@@ -33,16 +38,16 @@
             const username = prompt("Enter your username:");
             const password = prompt("Enter your password:");
             if (username === "Noah" && password === "Cornish") {
-                window.location.href = "main.html"; // Redirect to main.html
+                window.location.href = "main.html";
             } else {
-                alert("Access denied");
+                alert("Access denied. Please contact administration for login assistance.");
             }
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Peterborough_Petes_logo.svg/2560px-Peterborough_Petes_logo.svg.png" alt="Peterborough Petes Logo" style="width: 200px; height: auto;">
         <button class="button" onclick="promptLogin()">Login</button>
     </div>
 </body>
