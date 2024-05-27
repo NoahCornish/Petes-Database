@@ -25,35 +25,19 @@ async function fetchCSV() {
     }
 }
 
-function displayData(data, showTeamColumn = true) {
+function displayData(data) {
     const tableBody = document.querySelector('#statsTable tbody');
-    const teamHeader = document.querySelector('#teamHeader');
     tableBody.innerHTML = '';
-
-    if (showTeamColumn) {
-        teamHeader.style.display = '';
-    } else {
-        teamHeader.style.display = 'none';
-    }
 
     data.forEach(player => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${player.Name}</td>
-            <td>${player.BD}</td>
-            <td>${player.Pos}</td>
-            <td class="teamColumn" style="${showTeamColumn ? '' : 'display:none;'}">${player.Team}</td>
             <td>${player.GP}</td>
             <td>${player.G}</td>
             <td>${player.A}</td>
             <td>${player.PTS}</td>
             <td>${player['Pts/G']}</td>
-            <td>${player['+/-']}</td>
-            <td>${player.PPG}</td>
-            <td>${player.PPA}</td>
-            <td>${player.GWG}</td>
-            <td>${player.ENG}</td>
-            <td>${player.PIM}</td>
         `;
         tableBody.appendChild(row);
     });
@@ -65,7 +49,7 @@ function filterByTeam() {
     const rawData = JSON.parse(teamSelect.dataset.rawData);
 
     const filteredData = selectedTeam ? rawData.filter(player => player.Team === selectedTeam) : rawData;
-    displayData(filteredData, selectedTeam === '');
+    displayData(filteredData);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

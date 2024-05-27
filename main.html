@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petes Database</title>
+    <title>Petes Hub</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,15 +20,21 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 100%;
             position: fixed;
             top: 0;
         }
+        .header img {
+            height: 40px;
+            margin-right: 10px;
+        }
         .header h1 {
             margin: 0;
             font-size: 24px;
+            color: black;
+            display: flex;
+            align-items: center;
         }
         .header button {
             background-color: #007BFF;
@@ -37,7 +43,7 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 4px;
-            margin-left: 10px;
+            margin-left: auto;
         }
         .container {
             margin-top: 60px;
@@ -68,10 +74,9 @@
 </head>
 <body>
     <div class="header">
-        <h1>Petes Database</h1>
-        <div>
-            <button onclick="logout()">Logout</button>
-        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Peterborough_Petes_logo.svg/2560px-Peterborough_Petes_logo.svg.png" alt="Peterborough Petes Logo">
+        <h1>Petes Hub</h1>
+        <button onclick="logout()">Logout</button>
     </div>
     <div class="container">
         <div class="section">
@@ -79,31 +84,30 @@
             <p>This database provides comprehensive information on the Peterborough Petes, including detailed statistics for the current OHL season and prospects. Use the navigation buttons below to explore the available data.</p>
         </div>
         <div class="section">
-            <h2>View OHL Statistics</h2>
+            <h2>OHL Statistics</h2>
             <p>Access detailed statistics for the 2023-2024 OHL season. You can filter the data by team and view individual player performance metrics.</p>
             <button class="button" onclick="window.location.href='ohl_stats.html'">Go to OHL Stats</button>
         </div>
         <div class="section">
-            <h2>View Prospect Data</h2>
+            <h2>Prospect Data</h2>
             <p>Explore detailed information about the prospects in the Peterborough Petes organization. This section includes statistics, scouting reports, and potential future stars of the team.</p>
             <button class="button" onclick="protectProspects()">Go to Prospect Data</button>
         </div>
+        <div class="section">
+            <h2>Testing Page</h2>
+            <p>Test various components and view spreadsheet data.</p>
+            <button class="button" onclick="window.location.href='test.html'">Go to Testing Page</button>
+        </div>
     </div>
+    <script src="login.js"></script>
     <script>
-        function logout() {
-            window.location.href = 'index.html'; // Redirect to the welcome page
-        }
-
         function protectProspects() {
-            const username = prompt("Enter your username:");
-            const password = prompt("Enter your password:");
+            const username = localStorage.getItem('loggedInUser');
             
-            if (username === "Noah" && password === "Cornish") { 
-                window.location.href = 'prospects.html'; 
-            } else if (username === "Clair" && password === "Cornish") {
-                window.location.href = 'prospecthq.html';
+            if (username === "Clair") {
+                window.location.href = 'scouting_reports.html';
             } else {
-                alert("Access denied. Incorrect username or password.");
+                alert("ADMIN ACCESS ONLY");
             }
         }
     </script>

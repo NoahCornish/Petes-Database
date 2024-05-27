@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Petes Hub</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +16,28 @@
             background-color: #000000;
             position: relative;
         }
+        .header {
+            background-color: #855449;
+            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+        .header img {
+            height: 40px;
+            margin-right: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: black;
+            display: flex;
+            align-items: center;
+        }
         .container {
             text-align: center;
             background: white;
@@ -25,7 +47,7 @@
         }
         .container img {
             display: block;
-            margin: 0 auto 20px auto; /* Center the image and add margin-bottom */
+            margin: 0 auto 20px auto;
         }
         .button {
             padding: 10px 20px;
@@ -43,27 +65,33 @@
             color: white;
             font-size: 14px;
         }
-    </style>
-    <script>
-        function promptLogin() {
-            const username = prompt("Enter your username:");
-            const password = prompt("Enter your password:");
-            if ((username === "Noah" || username === "Clair") && password === "Cornish") {
-                window.location.href = "main.html";
-            } else {
-                alert("Access denied. Please contact administration for login assistance.");
-            }
+        .login-input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 24px);
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
-    </script>
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Peterborough_Petes_logo.svg/2560px-Peterborough_Petes_logo.svg.png" alt="Peterborough Petes Logo" style="width: 200px; height: auto;">
-        <button class="button" onclick="promptLogin()">Login</button>
+        <div class="login-container">
+            <input id="username" class="login-input" type="text" placeholder="Username">
+            <input id="password" class="login-input" type="password" placeholder="Password">
+            <button class="button" onclick="login()">Login</button>
+        </div>
     </div>
     <div class="note">
-        <p>Created by: Noah Cornish</p>
-        <p>&copy; 2024</p>
+        <!--<h3>Created by: Noah Cornish</h3>-->
+        <!--<p>&copy; 2024</p>-->
     </div>
+    <script src="login.js"></script>
 </body>
 </html>

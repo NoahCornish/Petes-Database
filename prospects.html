@@ -16,12 +16,23 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 40px;
+            margin-right: 10px;
         }
         .header h1 {
             margin: 0;
             font-size: 24px;
+            color: black;
+            display: flex;
+            align-items: center;
+        }
+        .header .buttons {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
         }
         .header button {
             background-color: #007BFF;
@@ -30,7 +41,6 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 4px;
-            margin-left: 10px;
         }
         .container {
             padding: 20px;
@@ -39,8 +49,9 @@
 </head>
 <body>
     <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Peterborough_Petes_logo.svg/2560px-Peterborough_Petes_logo.svg.png" alt="Peterborough Petes Logo">
         <h1>Prospects</h1>
-        <div>
+        <div class="buttons">
             <button onclick="window.location.href='main.html'">Back to Main</button>
             <button onclick="logout()">Logout</button>
         </div>
@@ -50,7 +61,7 @@
     </div>
     <script>
         function logout() {
-            window.location.href = 'index.html'; // Redirect to the welcome page
+            window.location.href = 'index.html';
         }
     </script>
 </body>
