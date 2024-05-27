@@ -110,6 +110,14 @@
                 alert("ADMIN ACCESS ONLY");
             }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('loggedInUser');
+            if (!username) {
+                alert("You are not logged in. Redirecting to login page.");
+                window.location.href = 'index.html';
+            }
+        });
     </script>
 </body>
 </html>

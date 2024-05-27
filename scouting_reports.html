@@ -138,8 +138,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const username = localStorage.getItem('loggedInUser');
-            if (username !== "Clair") {
-                alert("Access denied.");
+            if (!username || username !== "Clair") {
+                alert("Access denied. Redirecting to main page.");
                 window.location.href = 'main.html';
             }
         });

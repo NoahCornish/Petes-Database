@@ -118,7 +118,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const username = localStorage.getItem('loggedInUser');
-            if (username !== 'Noah') {
+            if (!username || username !== 'Noah') {
                 alert('Access denied. Only Noah can access this page.');
                 window.location.href = 'main.html';
             } else {
