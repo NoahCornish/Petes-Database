@@ -1,7 +1,3 @@
-function logout() {
-    window.location.href = 'index.html'; // Redirect to the welcome page
-}
-
 function saveReport() {
     const username = localStorage.getItem('loggedInUser');
     const gameDate = document.getElementById('gameDate').value;
@@ -15,8 +11,28 @@ function saveReport() {
             date: gameDate,
             team1: team1,
             team2: team2,
-            players: playersScouted.split(',').map(player => player.trim())
+            players: playersScouted
         };
+
+        // Send data to Google Sheets
+        fetch("https://script.google.com/macros/s/AKfycbxlaDH70ic_4iVd79P4fExagqO2LR573ZJTZyHXmJfUfgFpxz4N3e-ls_n9AF3pXqRwLA/exec", {
+            method: 'POST',
+            body: JSON.stringify(report),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === "success") {
+                alert("Report successfully saved to Google Sheets!");
+            } else {
+                alert("Error saving report to Google Sheets.");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 
         const reports = JSON.parse(localStorage.getItem('scoutingReports')) || [];
         reports.push(report);
@@ -32,48 +48,3 @@ function saveReport() {
         alert("Please fill in all fields before submitting.");
     }
 }
-
-function displayReports() {
-    const reports = JSON.parse(localStorage.getItem('scoutingReports')) || [];
-    const reportsContainer = document.getElementById('reports');
-    reportsContainer.innerHTML = '';
-
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
-
-    thead.innerHTML = `
-        <tr>
-            <th>Submitted By</th>
-            <th>Date</th>
-            <th>Team 1</th>
-            <th>Team 2</th>
-            <th>Players Scouted</th>
-        </tr>
-    `;
-
-    reports.forEach(report => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${report.username}</td>
-            <td>${report.date}</td>
-            <td>${report.team1}</td>
-            <td>${report.team2}</td>
-            <td>${report.players.join(', ')}</td>
-        `;
-        tbody.appendChild(tr);
-    });
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    reportsContainer.appendChild(table);
-}
-
-function clearReports() {
-    if (confirm("Are you sure you want to clear all reports?")) {
-        localStorage.removeItem('scoutingReports');
-        displayReports();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', displayReports);
