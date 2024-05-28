@@ -2,7 +2,9 @@ function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if ((username === "Noah" && password === "Buck2001#") || (username === "Clair" && password === "Monkey")) {
+    if ((username === "Noah" && password === "Buck2001#") || 
+        (username === "Clair" && password === "Monkey") ||
+        (username === "Julianna" && password === "Scruffy")) {
         localStorage.setItem('loggedInUser', username);
         window.location.href = "main.html";
     } else {
