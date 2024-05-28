@@ -3,7 +3,7 @@
 ## Overview
 Petes Hub is a comprehensive digital platform designed to support the Peterborough Petes hockey team with various analytical and management tools. This platform provides secure access to detailed statistics, scouting reports, and prospect information, offering a centralized repository for all the data and insights crucial for team operations and decision-making.
 
-Petes Hub is powered by the Hockey Analytics Platform (hAP), ensuring robust data management and analysis capabilities.
+Petes Hub is powered by StatEdge-Sport (sES), ensuring robust data management and analysis capabilities.
 
 ## Features
 
@@ -98,8 +98,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or suggestions, please contact [Noah Cornish](mailto:noah@example.com).
+For any questions or suggestions, please [Contact](mailto:noahcornish.github@gmail.com).
 
 ---
 
-Petes Hub is powered by the Hockey Analytics Platform (hAP), ensuring robust data management and analysis capabilities.
+Petes Hub is powered by StatEdge-Sport (sES), ensuring robust data management and analysis capabilities.

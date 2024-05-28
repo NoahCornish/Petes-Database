@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Rewrite rule to remove 'Public' from the URL
+RewriteCond %{REQUEST_URI} ^/Public/
+RewriteRule ^Public/(.*)$ /$1 [L,NC]
+
+# Ensure the default page is index.html
+DirectoryIndex index.html

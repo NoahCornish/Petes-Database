@@ -6,7 +6,7 @@ function login() {
         (username === "Clair" && password === "Monkey") ||
         (username === "Julianna" && password === "Scruffy")) {
         localStorage.setItem('loggedInUser', username);
-        window.location.href = "main.html";
+        window.location.href = "main.html"; // Updated path
     } else {
         alert("Error. Username and/or password invalid.");
     }
@@ -14,7 +14,7 @@ function login() {
 
 function logout() {
     localStorage.removeItem('loggedInUser');
-    window.location.href = 'index.html';
+    window.location.href = 'index.html'; // Updated path
 }
 
 document.addEventListener('DOMContentLoaded', () => {
