@@ -1,3 +1,6 @@
+<!--Version 0.4.0 PulseDynamics pD-->
+<!--Login page for Petes Hub-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +47,7 @@
         .container {
             text-align: center;
             background: white;
-            padding: 10px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 1;
@@ -63,12 +66,10 @@
             border-radius: 20px;
         }
         .note {
-            position: absolute;
-            bottom: 10%;
             text-align: center;
             color: black;
             font-size: 20px;
-            z-index: 1;
+            margin-top: 20px;
         }
         .login-input {
             margin-bottom: 10px;
@@ -123,13 +124,13 @@
             <input id="password" class="login-input" type="password" placeholder="Password">
             <button class="button" onclick="login()">Login</button>
         </div>
+        <div class="note">
+            <h4>Created by: Noah Cornish</h4>
+            <h4>pD 0.4.0 <span class="info-circle">i
+                <span class="tooltip">Petes Hub is powered by PulseDynamics 'pD'</span></span></h4>
+            <!--<p>&copy; 2024</p>-->
+        </div>
     </div>
-    <div class="note">
-        <h3>Created by: Noah Cornish</h3>
-        <h3>sES 0.4.0 <span class="info-circle">i
-            <span class="tooltip">Petes Hub is powered by StatEdge-Sport 'sES'</span></span></h3>
-        <!--<p>&copy; 2024</p>-->
-    </div>
-    <script src="../Private/login.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
