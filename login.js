@@ -8,7 +8,7 @@ function login() {
         localStorage.setItem('loggedInUser', username);
         window.location.href = "main.html";
     } else {
-        alert("Access denied. Please contact administration for login assistance.");
+        alert("Error. Username and/or password invalid.");
     }
 }
 
@@ -16,3 +16,16 @@ function logout() {
     localStorage.removeItem('loggedInUser');
     window.location.href = 'index.html';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('username').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            login();
+        }
+    });
+    document.getElementById('password').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            login();
+        }
+    });
+});

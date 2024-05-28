@@ -14,6 +14,9 @@
             height: 100vh;
             margin: 0;
             background-color: #000000;
+            background-image: url('https://cdn.chl.ca/uploads/chl/2023/05/21233748/May21OHLChampPhoto-1024x597.jpeg');
+            background-size: cover;
+            background-position: center;
             position: relative;
         }
         .header {
@@ -44,6 +47,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
         .container img {
             display: block;
@@ -62,8 +66,9 @@
             position: absolute;
             bottom: 10%;
             text-align: center;
-            color: white;
+            color: black;
             font-size: 14px;
+            z-index: 1;
         }
         .login-input {
             margin-bottom: 10px;
@@ -77,6 +82,37 @@
             flex-direction: column;
             align-items: center;
         }
+        .info-circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #855449;
+            color: black;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+        }
+        .info-circle:hover .tooltip {
+            display: block;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -89,9 +125,9 @@
         </div>
     </div>
     <div class="note">
-        <p>Created by: Noah Cornish</p>
-        <p>Pre-Release | pAP0.2.1</p>
-        <p>Petes Analytics Platform 'pAP' represents the operating system for this server.</p>
+        <h3>Created by: Noah Cornish</h3>
+        <h3>hAP0.2.1 <span class="info-circle">i
+            <span class="tooltip">Petes Hub is powered by Hockey Analytics Platform 'hAP'.</span></span></h3>
         <!--<p>&copy; 2024</p>-->
     </div>
     <script src="login.js"></script>
